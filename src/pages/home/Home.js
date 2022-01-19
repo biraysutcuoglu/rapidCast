@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Style/home.css";
 import Modal from "./components/Modal"
@@ -8,7 +8,7 @@ const Home = () => {
 
     const navigate = useNavigate();
     const [loggingOut, setLoggingOut] = useState(false);
-
+    const [refreshMeetings, setRefreshMeetings] = useState(false);
     const logout = () => {
         setLoggingOut(true);
         setTimeout(() => {
@@ -16,16 +16,19 @@ const Home = () => {
         }, 2000);
     }
 
-    /* let meetings;
-    axios.get("http://localhost:3000/getMeetings")
+    const [meetings, setMeetings] = useState([]);
+    
+    useEffect(() => {
+        axios.get("http://localhost:3000/getMeetings")
         .then(function (response) {
             if (response.data.status === 0) {
-                meetings = response.data.meetingList;
+                setMeetings(response.data.meetings);
             }
 
         })
         .catch(function (error) {
-        }) */
+        })
+    }, [refreshMeetings]);
 
     return (
         <div className="home-wrapper">
@@ -35,32 +38,29 @@ const Home = () => {
             <div className="display-wrapper">
                 {loggingOut && <div className="failure-label">Logged out successfully</div>}
                 <div>
-                    <><Modal/></>
+                    <><Modal refreshMeetings={refreshMeetings} setRefreshMeetings={setRefreshMeetings} /></>
                 </div>
                 <div className="meetings-list">
                     <h2>My Meetings</h2>
                     <div className="table-box">
                         <table>
+                            <thead>
+                                <tr>
+                                    <th>Meeting Name</th>
+                                    <th>Creation Date</th>
+                                    <th>Direct Link</th>
+                                </tr>
+                            </thead>
                             <tbody>
-                                 <tr>
-                                <th>Meeting Name</th>
-                                <th>Creation Date</th>
-                                <th>Direct Link</th>
-                            </tr>
-                            <tr>
-                                <td>WebGL Seminar</td>
-                                <td>14.02.2022 - 17.54</td>
-                                <td>
-                                    <a href="#">Link</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>CSS Training</td>
-                                <td>17.02.2022 - 18.12</td>
-                                <td>
-                                    <a href="#">Link</a>
-                                </td>
-                            </tr>
+                                {meetings.length > 0 && meetings.map(meeting => {
+                                    return (
+                                        <tr key ={meeting.meetingDate}>
+                                            <td>{meeting.meetingName}</td>
+                                            <td>{meeting.meetingDate}</td>
+                                            <td><a href="#"> Link </a></td>
+                                        </tr>
+                                    )
+                                })}
                             </tbody>
                         </table>
                     </div>
