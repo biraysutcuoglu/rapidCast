@@ -1,0 +1,124 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    position: relative;
+    height: 100vh;
+    background-image: linear-gradient(to top right, #ff6e7f, #bfe9ff);
+}
+.login-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #eee;
+    border-radius: 25px;
+
+    .submit-button {
+        margin-top: 32px;
+        border: none;
+        letter-spacing: 2px;
+        color: rgb(250, 250, 250);
+        background-color: #57b846;
+        width: 100%;
+        font-size: 20px;
+        height: 50px;
+        border-radius: 20px;
+    }
+    #submit-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.input-div {
+    height: 50px;
+    max-width: 300px;
+    width: 100%;
+    font-size: 18px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 20px;
+    margin-top: 16px;
+    border: none;
+    text-align: center;
+}
+
+input:focus-visible {
+    outline: 1px solid #bbbbff;
+}
+.register-div {
+    text-align: center;
+    margin-top: 96px;
+    width: 100%;
+    justify-self: center;
+}
+
+.register-button {
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    width: 100%;
+    height: 50px;
+    border-radius: 20px;
+    min-height: 32px;
+    font-size: 20px;
+    background-color: rgb(24, 77, 107);
+}
+.register-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+.register-button:active {
+    transform: translateY(-1px);
+}
+
+.false {
+    border: 1px solid red !important;
+}
+
+.logo {
+    border-radius: 20px;
+    width: 400px;
+    height: 400px;
+}
+
+.success-label {
+    width: 300px;
+    text-align: center;
+    font-size: 24px;
+    opacity: 0;
+    color: #fff;
+    background-color: #57b846;
+    border-radius: 150px;
+    opacity: 0.75;
+    animation: slideOpacity 2s;
+}
+
+@keyframes slideOpacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.75;
+    }
+}
+
+
+.failure-label {
+    width: 300px;
+    text-align: center;
+    font-size: 24px;
+    opacity: 0;
+    color: #fff;
+    background-color: #f00;
+    opacity: 0.75;
+    border-radius: 150px;
+    animation: slideOpacity 2s;
+}
