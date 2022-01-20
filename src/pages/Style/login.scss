@@ -12,8 +12,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
-    height: 70%;
+    width: 900px;
+    height: 700px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -109,7 +109,6 @@ input:focus-visible {
         opacity: 0.75;
     }
 }
-
 
 .failure-label {
     width: 300px;

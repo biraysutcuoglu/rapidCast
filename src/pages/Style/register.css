@@ -10,18 +10,18 @@
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 50%;
-  height: 70%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 700px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   background-color: #eee;
   border-radius: 25px;
 }
@@ -31,8 +31,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .input-div {
@@ -56,7 +56,7 @@ input:focus-visible {
   margin-top: 96px;
   width: 100%;
   -ms-grid-column-align: center;
-      justify-self: center;
+  justify-self: center;
 }
 
 .submit-button {
@@ -74,14 +74,14 @@ input:focus-visible {
 
 .submit-button:hover {
   -webkit-transform: translateY(-2px);
-          transform: translateY(-2px);
+  transform: translateY(-2px);
   -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .submit-button:active {
   -webkit-transform: translateY(-1px);
-          transform: translateY(-1px);
+  transform: translateY(-1px);
 }
 
 .false {
@@ -90,8 +90,8 @@ input:focus-visible {
 
 .logo {
   border-radius: 20px;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
 }
 
 .success-label {
@@ -104,7 +104,7 @@ input:focus-visible {
   border-radius: 150px;
   opacity: 0.75;
   -webkit-animation: slideOpacity 2s;
-          animation: slideOpacity 2s;
+  animation: slideOpacity 2s;
 }
 
 @-webkit-keyframes slideOpacity {
@@ -135,6 +135,6 @@ input:focus-visible {
   opacity: 0.75;
   border-radius: 150px;
   -webkit-animation: slideOpacity 2s;
-          animation: slideOpacity 2s;
+  animation: slideOpacity 2s;
 }
 /*# sourceMappingURL=register.css.map */

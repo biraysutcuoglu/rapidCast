@@ -45,7 +45,7 @@ const Register = () => {
     return (
         <div className="register-wrapper">
             <div>
-                <img src="https://imgyukle.com/f/2022/01/06/oT8TZc.png" className="logo" alt="logo" />
+                <img src="https://imgyukle.com/f/2022/01/06/oT8TZc.png" className="logo" alt="logoImg" />
             </div>
             <form>
                 {responseState.code === 200 && <div className="success-label">{responseState.message}</div>}
