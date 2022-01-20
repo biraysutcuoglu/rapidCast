@@ -50,7 +50,7 @@ const Register = () => {
             <form>
                 {responseState.code === 200 && <div className="success-label">{responseState.message}</div>}
                 {(responseState.code === 1 || responseState.code === 2) && <div className="failure-label">{responseState.message}</div>}
-                <h1 style={{ textAlign: "center" }}>Sign up for an account</h1>
+                <div style={{ maxWidth: "300px" }}><h1 style={{ textAlign: "center" }}>Sign up for an account</h1></div>
                 <div style={{ maxWidth: "300px", width: "100%" }}>
                     <input
                         className={!errors.userName ? "input-div" : "input-div false"}
